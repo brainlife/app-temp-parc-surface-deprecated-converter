@@ -1,0 +1,12 @@
+{
+	"lh_annot":	"testdata/parc-deprecated/lh.parc.annot.gii",
+	"rh_annot":	"testdata/parc-deprecated/rh.parc.annot.gii",
+	"lh_inflated":	"testdata/parc-deprecated/lh.parc.inflated.gii",
+	"rh_inflated":	"testdata/parc-deprecated/rh.parc.inflated.gii",
+	"lh_pial":	"testdata/parc-deprecated/lh.parc.pial.gii",
+	"rh_pial":	"testdata/parc-deprecated/rh.parc.pial.gii",
+	"lh_white":	"testdata/parc-deprecated/lh.parc.white.gii",
+	"rh_white":	"testdata/parc-deprecated/rh.parc.white.gii",
+	"label":	"testdata/parc-deprecated/label.json",
+	"key":	"testdata/parc-deprecated/key.txt"
+}

@@ -1,0 +1,37 @@
+#!/bin/bash
+
+lh_parc=`jq -r '.lh_annot' config.json`
+rh_parc=`jq -r '.rh_annot' config.json`
+lh_inflated=`jq -r '.lh_inflated' config.json`
+rh_inflated=`jq -r '.rh_inflated' config.json`
+lh_pial=`jq -r '.lh_pial' config.json`
+rh_pial=`jq -r '.rh_pial' config.json`
+lh_white=`jq -r '.lh_white' config.json`
+rh_white=`jq -r '.rh_white' config.json`
+key=`jq -r '.key' config.json`
+label=`jq -r '.label' config.json`
+hemi="lh rh"
+
+# make output directories
+[ ! -d ./surface-verts ] && mkdir -p ./surface-verts ./surface-verts/left ./surface-verts/right
+[ ! -d ./surface-data ] && mkdir -p ./surface-data
+
+# loop through data and copy to appropriate directories
+for h in ${hemi}
+do
+	if [[ ${h} == "lh" ]]; then
+		out_h="left"
+	else
+		out_h="right"
+	fi
+
+	# copy over parcellation data
+	cp $(eval "echo \$${h}_parc") ./surface-data/${out_h}.gii
+	cp ${label} ./surface-data/label.json
+	[ -f ${key} ] && cp ${key} ./surface-data/key.txt
+
+	# surface data
+	cp $(eval "echo \$${h}_inflated") ./surface-verts/${out_h}/${h}.inflated.gii
+	cp $(eval "echo \$${h}_pial") ./surface-verts/${out_h}/${h}.pial.gii
+	cp $(eval "echo \$${h}_white") ./surface-verts/${out_h}/${h}.white.gii
+done
