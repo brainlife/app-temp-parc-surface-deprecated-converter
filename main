@@ -13,8 +13,8 @@ label=`jq -r '.label' config.json`
 hemi="lh rh"
 
 # make output directories
-[ ! -d ./surface-verts ] && mkdir -p ./surface-verts ./surface-verts/left ./surface-verts/right
-[ ! -d ./surface-data ] && mkdir -p ./surface-data
+[ ! -d ./surface-verts ] && mkdir -p ./surface_verts ./surface_verts/left ./surface_verts/right
+[ ! -d ./surface-data ] && mkdir -p ./surface_data
 
 # loop through data and copy to appropriate directories
 for h in ${hemi}
@@ -26,12 +26,12 @@ do
 	fi
 
 	# copy over parcellation data
-	cp $(eval "echo \$${h}_parc") ./surface-data/${out_h}.gii
-	cp ${label} ./surface-data/label.json
-	[ -f ${key} ] && cp ${key} ./surface-data/key.txt
+	cp $(eval "echo \$${h}_parc") ./surface_data/${out_h}.gii
+	cp ${label} ./surface_data/label.json
+	[ -f ${key} ] && cp ${key} ./surface_data/key.txt
 
 	# surface data
-	cp $(eval "echo \$${h}_inflated") ./surface-verts/${out_h}/${h}.inflated.gii
-	cp $(eval "echo \$${h}_pial") ./surface-verts/${out_h}/${h}.pial.gii
-	cp $(eval "echo \$${h}_white") ./surface-verts/${out_h}/${h}.white.gii
+	cp $(eval "echo \$${h}_inflated") ./surface_verts/${out_h}/${h}.inflated.gii
+	cp $(eval "echo \$${h}_pial") ./surface_verts/${out_h}/${h}.pial.gii
+	cp $(eval "echo \$${h}_white") ./surface_verts/${out_h}/${h}.white.gii
 done
