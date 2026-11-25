@@ -7,8 +7,10 @@
 <p align="center">
   <a href="https://github.com/brainlife/abcd-spec"><img src="https://img.shields.io/badge/ABCD_Spec-v1.1-green.svg" alt="ABCD Spec v1.1"></a>
   <a href="https://doi.org/10.25663/brainlife.app.582"><img src="https://img.shields.io/badge/Brainlife-brainlife.app.582-blue.svg" alt="Run on brainlife.io"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-see_LICENSE-lightgrey.svg" alt="License"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-lightgrey.svg" alt="MIT license"></a>
 </p>
+
+> **This branch, `v1.0`, is the brainlife.io App Temporary converter of parcellation/surface-deprecated datatypes to surface datatypes** ([doi:10.25663/brainlife.app.582](https://doi.org/10.25663/brainlife.app.582)).
 
 ## At a glance
 
